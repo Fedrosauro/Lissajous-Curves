@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class MyFrame extends JFrame {
+public class MyFrame extends JFrame { //this is where the program starts
 
     /*    --------------------------------------------
           |      "PROGRAM" DEVELOPED BY "Klio" :3    |
