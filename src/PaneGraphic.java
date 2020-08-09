@@ -26,13 +26,15 @@ public class PaneGraphic extends JPanel implements ActionListener, MouseMotionLi
     private Rectangle2D rect1; //DRAW FIGURE button
     private int x1, y1;
     private int width1, height1;
-    private boolean clicked1, change1;
+    private boolean change1;
 
     private Rectangle2D rect2; //NEW ONE button
     private int x2;
-    private boolean clicked2, change2;
+    private boolean change2;
 
     private int GoffsetX, GoffsetY, LSquare;
+
+    private int i;
 
     public PaneGraphic(){
         setup();
@@ -66,9 +68,9 @@ public class PaneGraphic extends JPanel implements ActionListener, MouseMotionLi
 
         GoffsetX = 245; GoffsetY = 230; LSquare = 400;
 
-        clicked1 = false; change1 = false;
+        change1 = false;
 
-        clicked2 = false; change2 = false;
+        change2 = false;
 
         draw = false;
     }
@@ -147,9 +149,7 @@ public class PaneGraphic extends JPanel implements ActionListener, MouseMotionLi
         g2d.setColor(Color.white);
         g2d.setStroke(new BasicStroke(2));
 
-        for (int i = 0; i < graph.size(); i++) {
-            g2d.draw(graph.get(i));
-        }
+        graph.forEach(point -> g2d.draw(point)); //stream loop instead of normal loop
 
         g2d.setStroke(new BasicStroke(8));
         g2d.setColor(new Color(38, 220, 0));
