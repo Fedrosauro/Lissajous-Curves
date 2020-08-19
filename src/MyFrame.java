@@ -29,7 +29,14 @@ public class MyFrame extends JFrame { //this is where the program starts
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public static void main(String args[]) {
-        System.setProperty("sun.java2d.opengl", "true");
+        System.setProperty("sun.java2d.opengl", "True");
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
